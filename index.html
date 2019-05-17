@@ -8,23 +8,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://unpkg.com/picnic">
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <style>
+            details{
+                cursor: pointer;                
+            }
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div id="app">
-                <details v-for="b in bible.books">
-                    <summary>{{b.nm}}</summary>
-                    <div  class="flex demo">
-                        <div v-for="c in b.caps">
-                            <label>
-                                <input type="checkbox" v-model="c.lido">
-                                <span class="toggle pseudo button">{{c.id}}</span>
-                            </label>                        
+            <article class="card">
+                <header>
+                  <h3>Minha leitura</h3>
+                </header>
+                <main>
+                    <details v-for="b in bible.books">
+                        <summary>{{b.nm}}</summary>
+                        <div  class="flex demo">
+                            <div v-for="c in b.caps">
+                                <label>
+                                    <input type="checkbox" v-model="c.lido">
+                                    <span class="toggle pseudo button">{{c.id}}</span>
+                                </label>                        
+                            </div>
                         </div>
-                    </div>
-                </details>
+                    </details>
+                </main>
+                <footer>
+                    Sl 119:115 - Thiago Paiva
+                </footer>
+            </article>
         </div>
         <script src="index.js" async defer></script>
     </body>

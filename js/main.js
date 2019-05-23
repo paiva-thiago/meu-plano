@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-      bible:loadSession()
+      bible:loadSession()//,
+      //updt:updateChapter(l,c)//livro, capítulo
     }
   })
